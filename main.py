@@ -9,17 +9,17 @@
 # positivos ou "Dados inválidos" caso contrário.
 #
 
-try:
-    quantidade = int(input("Digite uma quantidade: "))
-    preco = float(input("Digite um valor: "))
+# try:
+#     quantidade = int(input("Digite uma quantidade: "))
+#     preco = float(input("Digite um valor: "))
     
-    if quantidade > 0 and preco > 0:
-        print("Dados válidos")
-    else: 
-        print("Dados inválidos")
+#     if quantidade > 0 and preco > 0:
+#         print("Dados válidos")
+#     else: 
+#         print("Dados inválidos")
 
-except ValueError:
-    print("Digite apenas números")
+# except ValueError:
+#     print("Digite apenas números")
 
 # Exercício 2: Classificação de Dados de Sensor
 # Imagine que você está trabalhando com dados de sensores IoT. Os dados incluem 
@@ -31,6 +31,18 @@ except ValueError:
 #
 # temperatura = 22
 
+try:
+    temperatura = float(input("Digite o valor da temperatura no sensor em Cº: "))
+    
+    if temperatura < 18:
+        print("Temperatura baixa, Avise um técnico!")
+    elif temperatura >= 18 and temperatura <= 26:
+        print("A temperatura está normal.")
+    else:
+        print("A temperatura está alta. Chame um técnico urgente.")
+
+except ValueError:
+    print("Digite um valor válido!")
 
 # Exercício 3: Filtragem de Logs por Severidade
 # Você está analisando logs de uma aplicação e precisa filtrar mensagens com 
