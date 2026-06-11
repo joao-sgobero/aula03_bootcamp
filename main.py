@@ -31,24 +31,37 @@
 #
 # temperatura = 22
 
-try:
-    temperatura = float(input("Digite o valor da temperatura no sensor em Cº: "))
+# try:
+#     temperatura = float(input("Digite o valor da temperatura no sensor em Cº: "))
     
-    if temperatura < 18:
-        print("Temperatura baixa, Avise um técnico!")
-    elif temperatura >= 18 and temperatura <= 26:
-        print("A temperatura está normal.")
-    else:
-        print("A temperatura está alta. Chame um técnico urgente.")
+#     if temperatura < 18:
+#         print("Temperatura baixa, Avise um técnico!")
+#     elif temperatura >= 18 and temperatura <= 26:
+#         print("A temperatura está normal.")
+#     else:
+#         print("A temperatura está alta. Chame um técnico urgente.")
 
-except ValueError:
-    print("Digite um valor válido!")
+# except ValueError:
+#     print("Digite um valor válido!")
 
 # Exercício 3: Filtragem de Logs por Severidade
 # Você está analisando logs de uma aplicação e precisa filtrar mensagens com 
 # severidade 'ERROR'. Dado um registro de log em formato de dicionário como 
 # log = {'timestamp': '2021-06-23 10:00:00', 'level': 'ERROR', 'message': 'Falha na conexão'}, 
 # escreva um programa que imprima a mensagem se a severidade for 'ERROR'.
+
+log = {
+    'timestamp': '2021-06-23 10:00:00', 
+    'level': 'ERROR', 
+    'message': 'Falha na conexão'
+}
+
+try: 
+    #tenta acessar e checar o nível de severidade
+    if log['level'] == 'ERROR':
+        print(log['message'])
+except KeyError:
+    print("Erro: O log fornecido não possui os campos necessários para análise.")
 
 
 # Exercício 4: Validação de Dados de Entrada
