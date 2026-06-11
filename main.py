@@ -50,18 +50,18 @@
 # log = {'timestamp': '2021-06-23 10:00:00', 'level': 'ERROR', 'message': 'Falha na conexão'}, 
 # escreva um programa que imprima a mensagem se a severidade for 'ERROR'.
 
-log = {
-    'timestamp': '2021-06-23 10:00:00', 
-    'level': 'ERROR', 
-    'message': 'Falha na conexão'
-}
+# log = {
+#     'timestamp': '2021-06-23 10:00:00', 
+#     'level': 'ERROR', 
+#     'message': 'Falha na conexão'
+# }
 
-try: 
-    #tenta acessar e checar o nível de severidade
-    if log['level'] == 'ERROR':
-        print(log['message'])
-except KeyError:
-    print("Erro: O log fornecido não possui os campos necessários para análise.")
+# try: 
+#     #tenta acessar e checar o nível de severidade
+#     if log['level'] == 'ERROR':
+#         print(log['message'])
+# except KeyError:
+#     print("Erro: O log fornecido não possui os campos necessários para análise.")
 
 
 # Exercício 4: Validação de Dados de Entrada
@@ -73,6 +73,32 @@ except KeyError:
 # idade = 25
 # email = "usuario@exemplo.com"
 
+try:
+    idade = 18
+    email = "usuario@exemplo.com"
+
+    dados_validos = True
+    
+    # Validando se a idade é negativa
+    if idade < 0:
+        raise ValueError
+
+    # Validando idade entre 18 e 65
+    elif not (18 <= idade <= 65):
+        print("Erro encontrado: A idade deve estar entre 18 e 65 anos.")
+        dados_validos = False
+    
+    # Validação básica de e-mail
+    if '@' not in email or '.' not in email:
+        print('Erro encontrado: O e-mail é invalido!')
+        dados_validos = False
+    
+    # Se tudo estiver correto
+    if dados_validos:
+        print('Os dados de usuário são válidos.')
+        
+except ValueError:
+    print('Sua idade não pode ser negativa.')
 
 # Exercício 5: Detecção de Anomalias em Dados de Transações
 # Você está trabalhando em um sistema de detecção de fraude e precisa identificar 
