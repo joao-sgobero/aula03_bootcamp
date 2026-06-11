@@ -73,32 +73,32 @@
 # idade = 25
 # email = "usuario@exemplo.com"
 
-try:
-    idade = 18
-    email = "usuario@exemplo.com"
+# try:
+#     idade = 18
+#     email = "usuario@exemplo.com"
 
-    dados_validos = True
+#     dados_validos = True
     
-    # Validando se a idade é negativa
-    if idade < 0:
-        raise ValueError
+#     # Validando se a idade é negativa
+#     if idade < 0:
+#         raise ValueError
 
-    # Validando idade entre 18 e 65
-    elif not (18 <= idade <= 65):
-        print("Erro encontrado: A idade deve estar entre 18 e 65 anos.")
-        dados_validos = False
+#     # Validando idade entre 18 e 65
+#     elif not (18 <= idade <= 65):
+#         print("Erro encontrado: A idade deve estar entre 18 e 65 anos.")
+#         dados_validos = False
     
-    # Validação básica de e-mail
-    if '@' not in email or '.' not in email:
-        print('Erro encontrado: O e-mail é invalido!')
-        dados_validos = False
+#     # Validação básica de e-mail
+#     if '@' not in email or '.' not in email:
+#         print('Erro encontrado: O e-mail é invalido!')
+#         dados_validos = False
     
-    # Se tudo estiver correto
-    if dados_validos:
-        print('Os dados de usuário são válidos.')
+#     # Se tudo estiver correto
+#     if dados_validos:
+#         print('Os dados de usuário são válidos.')
         
-except ValueError:
-    print('Sua idade não pode ser negativa.')
+# except ValueError:
+#     print('Sua idade não pode ser negativa.')
 
 # Exercício 5: Detecção de Anomalias em Dados de Transações
 # Você está trabalhando em um sistema de detecção de fraude e precisa identificar 
@@ -107,6 +107,21 @@ except ValueError:
 # depois das 18h). Dada uma transação como transacao = {'valor': 12000, 'hora': 20}, 
 # verifique se ela é suspeita.
 
+transacao = {'valor': 12000, 'hora': 20}
+
+try:
+    # Isolamos os valores em variaveis para ficarem mais legiveis.
+    valor = transacao['valor']
+    hora = transacao['hora']
+    
+    # Verificando a lógica de transação suspeita
+    if valor > 10000 or (hora < 9 or hora > 18):
+        print("Alerta: Esta transação é suspeita!")
+    else:
+        print("Essa transação é normalizada e segura.")
+
+except KeyError:
+    print("Erro: O arquivo de transação está incompleto ou com chaves inválidas.")
 
 # ==============================================================================
 # EXERCÍCIOS: ESTRUTURAS DE REPETIÇÃO (FOR) & DICIONÁRIOS
