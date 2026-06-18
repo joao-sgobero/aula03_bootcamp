@@ -130,28 +130,43 @@
 # Exercício 6: Contagem de Palavras em Textos
 # Objetivo: Dado um texto, contar quantas vezes cada palavra única aparece nele.
 #
-texto = "a raposa marrom salta sobre o cachorro preguiçoso"
+# texto = "a raposa marrom salta sobre o cachorro preguiçoso"
 
-#Separando as palavras do texto
-palavras = texto.split()
+# #Separando as palavras do texto
+# palavras = texto.split()
 
-#Criando dicionario vazio para receber a contagem
-contagem_palavras = {}
+# #Criando dicionario vazio para receber a contagem
+# contagem_palavras = {}
 
-#Percorrendo as palavras
-for p in palavras:
-    if p in palavras:
-        contagem_palavras[p] =+ 1
-    else:
-        contagem_palavras[p] = 1
-print(contagem_palavras)
+# #Percorrendo as palavras
+# for p in palavras:
+#     if p in palavras:
+#         contagem_palavras[p] =+ 1
+#     else:
+#         contagem_palavras[p] = 1
+# print(contagem_palavras)
 
 
 # Exercício 7: Normalização de Dados
 # Objetivo: Normalizar uma lista de números para que fiquem na escala de 0 a 1.
 #
-# numeros = [10, 20, 30, 40, 50]
+numeros = [10, 20, 30, 40, 50]
 
+#Descobrir o maior e menor valor
+minimo = min(numeros)
+maximo = max(numeros)
+
+#Criando uma lista que vai receber os novos valores normalizados
+numeros_normalizados = []
+
+#Percorrendo os números e normalizando
+for num in numeros:
+    #Aplicando a formula
+    num_normalizado = (num - minimo) / (maximo - minimo)
+    #Guardando os numeros
+    numeros_normalizados.append(num_normalizado)
+    
+print(numeros_normalizados)
 
 # Exercício 8: Filtragem de Dados Faltantes
 # Objetivo: Dada uma lista de dicionários representando dados de usuários, 
