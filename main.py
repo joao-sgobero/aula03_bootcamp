@@ -107,21 +107,21 @@
 # depois das 18h). Dada uma transação como transacao = {'valor': 12000, 'hora': 20}, 
 # verifique se ela é suspeita.
 
-transacao = {'valor': 12000, 'hora': 20}
+# transacao = {'valor': 12000, 'hora': 20}
 
-try:
-    # Isolamos os valores em variaveis para ficarem mais legiveis.
-    valor = transacao['valor']
-    hora = transacao['hora']
+# try:
+#     # Isolamos os valores em variaveis para ficarem mais legiveis.
+#     valor = transacao['valor']
+#     hora = transacao['hora']
     
-    # Verificando a lógica de transação suspeita
-    if valor > 10000 or (hora < 9 or hora > 18):
-        print("Alerta: Esta transação é suspeita!")
-    else:
-        print("Essa transação é normalizada e segura.")
+#     # Verificando a lógica de transação suspeita
+#     if valor > 10000 or (hora < 9 or hora > 18):
+#         print("Alerta: Esta transação é suspeita!")
+#     else:
+#         print("Essa transação é normalizada e segura.")
 
-except KeyError:
-    print("Erro: O arquivo de transação está incompleto ou com chaves inválidas.")
+# except KeyError:
+#     print("Erro: O arquivo de transação está incompleto ou com chaves inválidas.")
 
 # ==============================================================================
 # EXERCÍCIOS: ESTRUTURAS DE REPETIÇÃO (FOR) & DICIONÁRIOS
@@ -130,7 +130,21 @@ except KeyError:
 # Exercício 6: Contagem de Palavras em Textos
 # Objetivo: Dado um texto, contar quantas vezes cada palavra única aparece nele.
 #
-# texto = "a raposa marrom salta sobre o cachorro preguiçoso"
+texto = "a raposa marrom salta sobre o cachorro preguiçoso"
+
+#Separando as palavras do texto
+palavras = texto.split()
+
+#Criando dicionario vazio para receber a contagem
+contagem_palavras = {}
+
+#Percorrendo as palavras
+for p in palavras:
+    if p in palavras:
+        contagem_palavras[p] =+ 1
+    else:
+        contagem_palavras[p] = 1
+print(contagem_palavras)
 
 
 # Exercício 7: Normalização de Dados
