@@ -172,27 +172,26 @@
 # Objetivo: Dada uma lista de dicionários representando dados de usuários, 
 # filtrar aqueles que têm um campo específico faltando (vazio).
 
-usuarios = [
-    {"nome": "Alice", "email": "alice@example.com"},
-    {"nome": "Bob", "email": ""},
-    {"nome": "Carol", "email": "carol@example.com"}
-]
+# usuarios = [
+#     {"nome": "Alice", "email": "alice@example.com"},
+#     {"nome": "Bob", "email": ""},
+#     {"nome": "Carol", "email": "carol@example.com"}
+# ]
 
-usuarios_vazios = []
+# usuarios_vazios = []
 
-for user in usuarios:
-    nome = user.get("nome")
-    email = user.get("email")
+# for user in usuarios:
+#     nome = user.get("nome")
+#     email = user.get("email")
     
-    novo_usuario = {}
+#     novo_usuario = {}
     
-    if not nome or not email:
-        novo_usuario["nome"] = nome
-        novo_usuario["email"] = email
-        usuarios_vazios.append(novo_usuario)
+#     if not nome or not email:
+#         novo_usuario["nome"] = nome
+#         novo_usuario["email"] = email
+#         usuarios_vazios.append(novo_usuario)
     
-print(usuarios_vazios)
-
+# print(usuarios_vazios)
 
 # Exercício 9: Extração de Subconjuntos de Dados
 # Objetivo: Dada uma lista de números, extrair apenas aqueles que são pares.
@@ -210,12 +209,27 @@ print(usuarios_vazios)
 # Objetivo: Dado um conjunto de registros de vendas, calcular o total de 
 # vendas por categoria.
 #
-# vendas = [
-#     {"categoria": "eletrônicos", "valor": 1200},
-#     {"categoria": "livros", "valor": 200},
-#     {"categoria": "eletrônicos", "valor": 800}
-# ]
+vendas = [
+    {"categoria": "eletrônicos", "valor": 1200},
+    {"categoria": "livros", "valor": 200},
+    {"categoria": "eletrônicos", "valor": 800}
+]
 
+# Criando dicionario para armazenar os valors totais
+totais = {}
+
+for v in vendas:
+    # Pegando os dados atuais
+    categoria = v["categoria"]
+    valor = v["valor"]
+    
+    # Lógica para calculo de valor
+    if categoria in totais:
+        totais[categoria] += valor
+    else:
+        totais[categoria] = valor
+
+print(totais)
 
 # ==============================================================================
 # EXERCÍCIOS: ESTRUTURAS DE REPETIÇÃO (WHILE) & TRATAMENTO DE ERROS
