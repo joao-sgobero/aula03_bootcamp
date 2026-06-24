@@ -250,17 +250,17 @@
 # Objetivo: Solicitar ao usuário um número dentro de um intervalo específico 
 # (entre 1 e 10) repetidamente até que a entrada seja válida.
 
-while True:
-    try:
-        numero = int(input("Digite um número entre 1-10: "))
-        #Validando a lógica
-        if 1 <= numero <= 10:
-            print("Parabéns você saiu do loop!")
-            break
-        else:
-            print("Você digitou um número inválido tente novamente.")
-    except ValueError:
-        print("Sua entra não é aceita, leia as regras de envio e tente novamente.")
+# while True:
+#     try:
+#         numero = int(input("Digite um número entre 1-10: "))
+#         #Validando a lógica
+#         if 1 <= numero <= 10:
+#             print("Parabéns você saiu do loop!")
+#             break
+#         else:
+#             print("Você digitou um número inválido tente novamente.")
+#     except ValueError:
+#         print("Sua entra não é aceita, leia as regras de envio e tente novamente.")
 
 # Exercício 13: Consumo de API Simulado
 # Objetivo: Simular o consumo de uma API paginada, onde cada "página" de dados 
@@ -268,6 +268,35 @@ while True:
 #
 # pagina_atual = 1
 # paginas_totais = 5
+
+import time
+
+#Configurações iniciais
+pagina_atual = 1
+paginas_totais = 5
+
+print("Iniciando a páginação da API...\n")
+
+while pagina_atual <= paginas_totais:
+    print(f"📥 Buscando dados da Página {pagina_atual} de {paginas_totais}...")
+    
+    # Simulando o tempo de espera da resposta do servidor (1 segundo)
+    time.sleep(1)
+    
+    #Simulando resposta da API
+    dados_da_pagina = [f"Item {i} da pag {pagina_atual}" for i in range(1, 4)]
+    
+    # Processando os dados recebidos
+    print(f"⚙️ Processando {len(dados_da_pagina)} itens recebidos:")
+    for item in dados_da_pagina:
+        print(f"   -> {item}")
+    
+    # Incrementa para ir para a próxima página (sua lógica perfeita)
+    pagina_atual += 1
+
+print("\n✅ Todos os dados foram processados com sucesso!")
+
+
 
 
 # Exercício 14: Tentativas de Conexão
