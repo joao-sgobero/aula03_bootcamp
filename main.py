@@ -239,17 +239,28 @@
 # Objetivo: Ler dados de entrada do usuário até que uma palavra-chave 
 # específica ("sair") seja fornecida.
 
-while True:
-    palavra_chave = input("Digite uma palavra chave: ").strip().lower()
+# while True:
+#     palavra_chave = input("Digite uma palavra chave: ").strip().lower()
     
-    if palavra_chave == "sair":
-        print("Parabéns, você fugiu do loop")
-        break
+#     if palavra_chave == "sair":
+#         print("Parabéns, você fugiu do loop!")
+#         break
 
 # Exercício 12: Validação de Entrada
 # Objetivo: Solicitar ao usuário um número dentro de um intervalo específico 
 # (entre 1 e 10) repetidamente até que a entrada seja válida.
 
+while True:
+    try:
+        numero = int(input("Digite um número entre 1-10: "))
+        #Validando a lógica
+        if 1 <= numero <= 10:
+            print("Parabéns você saiu do loop!")
+            break
+        else:
+            print("Você digitou um número inválido tente novamente.")
+    except ValueError:
+        print("Sua entra não é aceita, leia as regras de envio e tente novamente.")
 
 # Exercício 13: Consumo de API Simulado
 # Objetivo: Simular o consumo de uma API paginada, onde cada "página" de dados 
