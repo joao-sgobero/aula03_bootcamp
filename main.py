@@ -209,27 +209,27 @@
 # Objetivo: Dado um conjunto de registros de vendas, calcular o total de 
 # vendas por categoria.
 #
-vendas = [
-    {"categoria": "eletrônicos", "valor": 1200},
-    {"categoria": "livros", "valor": 200},
-    {"categoria": "eletrônicos", "valor": 800}
-]
+# vendas = [
+#     {"categoria": "eletrônicos", "valor": 1200},
+#     {"categoria": "livros", "valor": 200},
+#     {"categoria": "eletrônicos", "valor": 800}
+# ]
 
-# Criando dicionario para armazenar os valors totais
-totais = {}
+# # Criando dicionario para armazenar os valors totais
+# totais = {}
 
-for v in vendas:
-    # Pegando os dados atuais
-    categoria = v["categoria"]
-    valor = v["valor"]
+# for v in vendas:
+#     # Pegando os dados atuais
+#     categoria = v["categoria"]
+#     valor = v["valor"]
     
-    # Lógica para calculo de valor
-    if categoria in totais:
-        totais[categoria] += valor
-    else:
-        totais[categoria] = valor
+#     # Lógica para calculo de valor
+#     if categoria in totais:
+#         totais[categoria] += valor
+#     else:
+#         totais[categoria] = valor
 
-print(totais)
+# print(totais)
 
 # ==============================================================================
 # EXERCÍCIOS: ESTRUTURAS DE REPETIÇÃO (WHILE) & TRATAMENTO DE ERROS
@@ -239,6 +239,12 @@ print(totais)
 # Objetivo: Ler dados de entrada do usuário até que uma palavra-chave 
 # específica ("sair") seja fornecida.
 
+while True:
+    palavra_chave = input("Digite uma palavra chave: ").strip().lower()
+    
+    if palavra_chave == "sair":
+        print("Parabéns, você fugiu do loop")
+        break
 
 # Exercício 12: Validação de Entrada
 # Objetivo: Solicitar ao usuário um número dentro de um intervalo específico 
@@ -259,7 +265,6 @@ print(totais)
 #
 # tentativas_maximas = 5
 # tentativa = 1
-
 
 # Exercício 15: Processamento de Dados com Condição de Parada
 # Objetivo: Processar itens de uma lista um a um até encontrar um valor 
