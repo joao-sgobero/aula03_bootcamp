@@ -269,34 +269,32 @@
 # pagina_atual = 1
 # paginas_totais = 5
 
-import time
+# import time
 
 #Configurações iniciais
-pagina_atual = 1
-paginas_totais = 5
+# pagina_atual = 1
+# paginas_totais = 5
 
-print("Iniciando a páginação da API...\n")
+# print("Iniciando a páginação da API...\n")
 
-while pagina_atual <= paginas_totais:
-    print(f"📥 Buscando dados da Página {pagina_atual} de {paginas_totais}...")
+# while pagina_atual <= paginas_totais:
+#     print(f"📥 Buscando dados da Página {pagina_atual} de {paginas_totais}...")
     
-    # Simulando o tempo de espera da resposta do servidor (1 segundo)
-    time.sleep(1)
+#     # Simulando o tempo de espera da resposta do servidor (1 segundo)
+#     time.sleep(1)
     
-    #Simulando resposta da API
-    dados_da_pagina = [f"Item {i} da pag {pagina_atual}" for i in range(1, 4)]
+#     #Simulando resposta da API
+#     dados_da_pagina = [f"Item {i} da pag {pagina_atual}" for i in range(1, 4)]
     
-    # Processando os dados recebidos
-    print(f"⚙️ Processando {len(dados_da_pagina)} itens recebidos:")
-    for item in dados_da_pagina:
-        print(f"   -> {item}")
+#     # Processando os dados recebidos
+#     print(f"⚙️ Processando {len(dados_da_pagina)} itens recebidos:")
+#     for item in dados_da_pagina:
+#         print(f"   -> {item}")
     
-    # Incrementa para ir para a próxima página (sua lógica perfeita)
-    pagina_atual += 1
+#     # Incrementa para ir para a próxima página (sua lógica perfeita)
+#     pagina_atual += 1
 
-print("\n✅ Todos os dados foram processados com sucesso!")
-
-
+# print("\n✅ Todos os dados foram processados com sucesso!")
 
 
 # Exercício 14: Tentativas de Conexão
@@ -305,6 +303,32 @@ print("\n✅ Todos os dados foram processados com sucesso!")
 #
 # tentativas_maximas = 5
 # tentativa = 1
+
+#Configurações iniciais
+tentativas_maximas = 5
+tentativa = 1
+conectado = False
+
+# Mude para True se quiser testar o cenário onde ele conecta de primeira
+# Mude para False se quiser ver ele falhando todas as 5 vezes
+sucesso_na_conexao = True
+
+print("Tentando conectar...")
+
+while tentativa <= tentativas_maximas:
+    print(f"Tentativa {tentativa} de {tentativas_maximas}...")
+    
+    #Criando a lógica
+    if sucesso_na_conexao:
+        print("Sucesso na conexão...")
+        conectado = True
+        break
+    
+    tentativa += 1
+
+#Se o loop não se conectar...
+if not sucesso_na_conexao:
+    print("Erro: Limite máximo de tentativas, tente novamente em breve.")
 
 # Exercício 15: Processamento de Dados com Condição de Parada
 # Objetivo: Processar itens de uma lista um a um até encontrar um valor 
