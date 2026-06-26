@@ -334,22 +334,69 @@
 # Objetivo: Processar itens de uma lista um a um até encontrar um valor 
 # específico ("parar") que indica a interrupção.
 #
-itens = [1, 2, 3, "parar", 4, 5]
-index = 0
+# itens = [1, 2, 3, "parar", 4, 5]
+# index = 0
 
-while index < len(itens):
-    # 1. Primeiro checa se é a condição de parada
-    if itens[index] == "parar":
-        print('Item de parada encontrado! Interrompendo...')
-        break
+# while index < len(itens):
+#     # 1. Primeiro checa se é a condição de parada
+#     if itens[index] == "parar":
+#         print('Item de parada encontrado! Interrompendo...')
+#         break
     
-    # 2. Só processa se NÃO for o "parar"
-    print(f"Oie estou aqui {itens[index]}")
+#     # 2. Só processa se NÃO for o "parar"
+#     print(f"Oie estou aqui {itens[index]}")
     
-    index += 1
+#     index += 1
     
 
 # Exercício Bônus: Validação Completa de Formulário com Controle de Fluxo
 # Objetivo: Integre um fluxo de `while` com tratamento de exceções (`try-except`) 
 # que repita as perguntas de entrada de dados (Nome, Salário e Bônus) até que o 
 # usuário insira
+
+# Exercício Bônus: Validação Completa de Formulário com Controle de Fluxo
+
+print("--- Cadastro de Funcionário ---")
+
+while True:
+    try:
+        # 1. Validação do Nome
+        nome = input("Digite o seu nome: ").strip()
+        if not nome:
+            print("Erro: O nome não pode estar vazio. Tente novamente.\n")
+            continue  # Volta para o início do while
+            
+        if not nome.replace(" ", "").isalpha():
+            print("Erro: O nome deve conter apenas letras. Tente novamente.\n")
+            continue
+
+        # 2. Validação do Salário
+        salario_input = input("Digite o seu salário: ").strip()
+        salario = float(salario_input)
+        if salario < 0:
+            print("Erro: O salário não pode ser negativo. Tente novamente.\n")
+            continue
+
+        # 3. Validação do Bônus
+        bonus_input = input("Digite o percentual do seu bônus (ex: 10 para 10%): ").strip()
+        bonus = float(bonus_input)
+        if bonus < 0:
+            print("Erro: O bônus não pode ser negativo. Tente novamente.\n")
+            continue
+
+        # Se o código chegou até aqui sem nenhum 'continue', os dados estão corretos!
+        # Podemos quebrar o loop.
+        break
+
+    except ValueError:
+        # Captura o erro caso o usuário digite texto onde deveria ser um número (float)
+        print("Erro: Entrada inválida! Salário e Bônus devem ser números. Recomeçando...\n")
+
+# Processamento final após a validação do sucesso
+salario_total = salario + (salario * (bonus / 100))
+
+print("\n--- Cadastro Realizado com Sucesso! ---")
+print(f"Nome: {nome}")
+print(f"Salário Base: R$ {salario:.2f}")
+print(f"Bônus: {bonus}%")
+print(f"Salário Total com Bônus: R$ {salario_total:.2f}")
