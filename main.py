@@ -304,38 +304,50 @@
 # tentativas_maximas = 5
 # tentativa = 1
 
-#Configurações iniciais
-tentativas_maximas = 5
-tentativa = 1
-conectado = False
+# #Configurações iniciais
+# tentativas_maximas = 5
+# tentativa = 1
+# conectado = False
 
 # Mude para True se quiser testar o cenário onde ele conecta de primeira
 # Mude para False se quiser ver ele falhando todas as 5 vezes
-sucesso_na_conexao = True
+# sucesso_na_conexao = True
 
-print("Tentando conectar...")
+# print("Tentando conectar...")
 
-while tentativa <= tentativas_maximas:
-    print(f"Tentativa {tentativa} de {tentativas_maximas}...")
+# while tentativa <= tentativas_maximas:
+#     print(f"Tentativa {tentativa} de {tentativas_maximas}...")
     
-    #Criando a lógica
-    if sucesso_na_conexao:
-        print("Sucesso na conexão...")
-        conectado = True
-        break
+#     #Criando a lógica
+#     if sucesso_na_conexao:
+#         print("Sucesso na conexão...")
+#         conectado = True
+#         break
     
-    tentativa += 1
+#     tentativa += 1
 
-#Se o loop não se conectar...
-if not sucesso_na_conexao:
-    print("Erro: Limite máximo de tentativas, tente novamente em breve.")
+# #Se o loop não se conectar...
+# if not sucesso_na_conexao:
+    # print("Erro: Limite máximo de tentativas, tente novamente em breve.")
 
 # Exercício 15: Processamento de Dados com Condição de Parada
 # Objetivo: Processar itens de uma lista um a um até encontrar um valor 
 # específico ("parar") que indica a interrupção.
 #
-# itens = [1, 2, 3, "parar", 4, 5]
+itens = [1, 2, 3, "parar", 4, 5]
+index = 0
 
+while index < len(itens):
+    # 1. Primeiro checa se é a condição de parada
+    if itens[index] == "parar":
+        print('Item de parada encontrado! Interrompendo...')
+        break
+    
+    # 2. Só processa se NÃO for o "parar"
+    print(f"Oie estou aqui {itens[index]}")
+    
+    index += 1
+    
 
 # Exercício Bônus: Validação Completa de Formulário com Controle de Fluxo
 # Objetivo: Integre um fluxo de `while` com tratamento de exceções (`try-except`) 
